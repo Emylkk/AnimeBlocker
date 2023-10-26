@@ -1,0 +1,47 @@
+{
+    "manifest_version": 3,
+    "name": "AnimeFireBlocker",
+    "description": "Reprodutor automático com pseudo-full-screen",
+    "version": "0.0.2",
+    "web_accessible_resources": [
+        {
+            "extensions": [
+                "Animesonlinevip"
+            ],
+            "resources": [
+                "block.svg",
+                "style.css"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "icons": {
+        "128": "Ba.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://animesonlinehd.vip/*"
+            ],
+            "js": [
+                "jquery.min.js",
+                "seletor.js"
+            ],
+            "css": [
+                "newstyle.css"
+            ],
+            "all_frames": true
+        }
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    }
+}
